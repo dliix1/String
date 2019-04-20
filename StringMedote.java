@@ -14,7 +14,7 @@ public class StringMedote {
 
 	public void duzinaStringa() {
 
-		System.out.println(bezveze.length());
+		System.out.println("Duzina stringa je: " + bezveze.length());
 
 	}
 
@@ -26,11 +26,10 @@ public class StringMedote {
 
 			if (i % 2 == 0) {
 
-				System.out.println(bezveze.charAt(i));
+				System.out.println(bezveze.charAt(i) + " ");
 
 			}
 		}
-
 	}
 
 	public void karakteriNaNeparnimPozicijama() {
@@ -41,7 +40,7 @@ public class StringMedote {
 
 			if (i % 2 != 0) {
 
-				System.out.println(bezveze.charAt(i));
+				System.out.println(bezveze.charAt(i) + " ");
 
 			}
 		}
@@ -93,8 +92,8 @@ public class StringMedote {
 		for (int i = 0; i < bezveze.length(); i++) {
 
 			if (!Character.isAlphabetic(bezveze.charAt(i))
-					&& !Character.isWhitespace(bezveze.charAt(i))
-					&& !Character.isDigit(bezveze.charAt(i))) {
+					&& Character.isWhitespace(bezveze.charAt(i))
+					&& Character.isDigit(bezveze.charAt(i))) {
 
 				System.out.println(bezveze.charAt(i) + " ");
 			}
