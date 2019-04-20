@@ -2,63 +2,103 @@ package String;
 
 public class StringMedote {
 
-	public void min(int[] niz) {
+	String bezveze = new String();
 
-		int minimalni = niz[0];
+	public String getBezveze() {
+		return bezveze;
+	}
 
-		for (int i = 0; i < niz.length; i++) {
+	public void setBezveze(String bezveze) {
+		this.bezveze = bezveze;
+	}
 
-			if (niz[i] < minimalni) {
-				minimalni = niz[i];
+	public void duzinaStringa() {
+
+		System.out.println(bezveze.length());
+
+	}
+
+	public void karakteriNaParnimPozicijama() {
+
+		System.out.println("Karakteri na parnim pozicijama su: ");
+
+		for (int i = 0; i < bezveze.length(); i++) {
+
+			if (i % 2 == 0) {
+
+				System.out.println(bezveze.charAt(i));
+
 			}
 		}
-		System.out.println("Najmanji element u nizu je: " + minimalni);
+
 	}
 
-	public void max(int[] niz) {
-		int maksimalni = niz[0];
-		for (int i = 0; i < niz.length; i++) {
-			if (niz[i] > maksimalni) {
-				maksimalni = niz[i];
+	public void karakteriNaNeparnimPozicijama() {
+
+		System.out.println("Karakteri na neparnim pozicijama su: ");
+
+		for (int i = 0; i < bezveze.length(); i++) {
+
+			if (i % 2 != 0) {
+
+				System.out.println(bezveze.charAt(i));
+
 			}
 		}
-		System.out.println("Najveci element u nizu je: " + maksimalni);
 	}
 
-	public void zbirNiza(int[] niz) {
+	public void brojUppercaseKaraktera() {
 
-		int zbir = niz[0];
-		for (int i = 0; i < niz.length; i++) {
-
-			zbir += niz[i];
-
-		}
-
-		System.out.println("Zbir brojeva u nizu je: " + zbir);
-	}
-
-	public void prosjekBrojeva(int[] niz) {
-
-		int prosjek = 0;
-		int zbir = 0;
 		int brojac = 0;
 
-		for (int i = 0; i < niz.length; i++) {
+		for (int i = 0; i < bezveze.length(); i++) {
 
-			zbir += niz[i];
-			brojac++;
-			prosjek = zbir / brojac;
+			if (Character.isUpperCase(bezveze.charAt(i))) {
 
+				brojac++;
+
+			}
 		}
 
-		System.out.println("Prosjek brojeva u nizu je: " + prosjek);
-	}
-
-	public void sortiraniNiz(int[] niz) {
-
-		java.util.Arrays.parallelSort(niz);
-		for (int i = 0; i < niz.length; i++) {
-			System.out.print(niz[i] + " ");
+		if (brojac > 0) {
+			System.out.println("Vas string ima " + brojac
+					+ " uppercase karaktera.");
+		} else {
+			System.out.println("Vas string nema uppercase karaktera.");
 		}
 	}
+
+	public void brojLowercaseKaraktera() {
+
+		int brojac = 0;
+
+		for (int i = 0; i < bezveze.length(); i++) {
+
+			if (Character.isLowerCase(bezveze.charAt(i))) {
+
+				brojac++;
+			}
+		}
+
+		if (brojac > 0) {
+			System.out.println("Vas string ima " + brojac
+					+ " lowercase karaktera.");
+		} else {
+			System.out.println("Vas string nema lowercase karaktera.");
+		}
+	}
+
+	public void sviKojiNisuSlova() {
+
+		for (int i = 0; i < bezveze.length(); i++) {
+
+			if (!Character.isAlphabetic(bezveze.charAt(i))
+					&& !Character.isWhitespace(bezveze.charAt(i))
+					&& !Character.isDigit(bezveze.charAt(i))) {
+
+				System.out.println(bezveze.charAt(i) + " ");
+			}
+		}
+	}
+
 }
